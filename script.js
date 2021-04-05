@@ -1,12 +1,12 @@
 
 let map =   
-    ["       ",
-    "       ",
-    "       ",
-    "       ",
-    "       ",
-    "       ",
-    "       ",
+    ["      ",
+    "      ",
+    "      ",
+    "      ",
+    "      ",
+    "      ",
+    "      ",
     ];
 
 function boardBuild(arr){
@@ -15,7 +15,10 @@ function boardBuild(arr){
     for(let i = 0; i < arr.length; i++) {
         let coluna = document.createElement("div");
         coluna.classList.add("columns");
+        coluna.innerText = "Oi"
+        coluna.id = "Column" + (i + 1);
         board.appendChild(coluna);
+        
 
         let celulas = arr[i];
         let pegaColuna = document.getElementsByClassName("columns")[i];
