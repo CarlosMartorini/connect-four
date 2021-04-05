@@ -9,10 +9,25 @@ let map =
     "       ",
     ];
 
-function boardBuild(){
-// criar 
-// Ana
+function boardBuild(arr){
+    let board = document.getElementById("board");
+
+    for(let i = 0; i < arr.length; i++) {
+        let coluna = document.createElement("div");
+        coluna.classList.add("columns");
+        board.appendChild(coluna);
+
+        let celulas = arr[i];
+        let pegaColuna = document.getElementsByClassName("columns")[i];
+        for(let x = 0; x < celulas.length; x++) {
+            let createCel = document.createElement("div");
+            createCel.classList.add("celulas");
+            pegaColuna.appendChild(createCel);
+        }
+    }
+    
 }
+
 boardBuild(map)
 
 function game(ev){
