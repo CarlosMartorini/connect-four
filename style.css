@@ -1,13 +1,89 @@
-#board{
+:root {
+    --fontFam: 'Roboto', sans-serif;
+    --corFont: rgb(54, 54, 54);
+    --corApoio: rgba(14, 14, 14, 0.5);
+}
+
+body {
+    font-family: var(--fontFam);
+    color: var(--corFont);
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--corApoio);
+}
+
+header img {
+    width: 50px;
+}
+
+header h1 {
+    font-size: 26px;
+    margin: 5px 20px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#instruct {
+    margin: 10px 20px;
+}
+
+#instruct p {
+    width: 300px;
+}
+
+#area {
+    margin: 0;
+}
+
+#board {
     display: flex;
     flex-direction: row;
+    width: 266px;
+    height: auto;
+    
+
 }
 
 
 .columns{
 
 }
+
+.celulas {
+    width: 38px;
+    height: 38px;
+    border: 2px solid black;
+}
+
 /* 
 .hidden{
     display: none;
 } */
+
+@media only screen and (min-width: 992px) {
+
+    main {
+        flex-direction: row;
+    }
+
+    #board {
+        width: 518px;
+        margin: 5px 200px;
+    }
+
+    .celulas {
+        width: 70px;
+        height: 70px;
+        
+    }
+}
