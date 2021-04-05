@@ -1,0 +1,13 @@
+#board{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.columns{
+
+}
+/* 
+.hidden{
+    display: none;
+} */
