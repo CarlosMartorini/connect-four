@@ -37,6 +37,7 @@ boardBuild(map);
 
 
 let counter = 0;
+
 let actualColumn;
 let actualCel;
 let columnSelected;
@@ -74,8 +75,8 @@ function game(ev){
             return;
         }  
 
-        if (actualCel.childElementCount === 0) {
-            console.log(counter)
+        if (actualCel.childElementCount === 0) { 
+            
             if (counter % 2 === 0) {
                 actualCel.appendChild(filho);
                 filho.classList.add('ballRed');
@@ -95,7 +96,7 @@ function game(ev){
         }
     
     }
-    
+    // chama vitoria
    
 }
 
@@ -109,27 +110,37 @@ column7.addEventListener("click", game)
 
 
 function victory(){
-// 4 bolinhas vertical
-// " horizontal
-// diagonal
-// Eduardo
+
 }
 victory()
 
-function drawn(){
-// quando todas as células forem preenchidas
-// conferir 
+
+// function drawn(){
+//     let countCol = 0;
+//     for (let i = 0; i < 7; i++) {
+//         let idCel = `C${i + 1}L1`;
+//         let cel = document.getElementById(idCel);
+//         if(cel.hasChildNodes(true)) {
+//             countCol++
+//         }
+//     }
+//     console.log(countCol)
+//     if(countCol === 7) {
+//         return true
+        
+//     }
+    
+// }
+
+const createMap = () => {
+    let getBoard = document.getElementById('board');
+    let map = [];
+    for (let i = 0; i < 7; i++) {
+        map.push([]);
+        for (let j = 0; j < 6; j++) {
+            map[i].push(getBoard.children[i].children[j]);
+        }
+    }
+    return map;
 }
-drawn()
-
- // receber os handlers de click usando o ev currentTarget da column
-
-    // contador de frequência : Carlos
-  
-    // usar o contador de frequencia para saber se a jogada é do R ou do B
-
-    // spread de cada string
-    // conferir o item com o indice baseado na coluna clicada
-    // fazer um arr com todo primeiro item dos arr que foram gerados
-    // fazer um for com i-- para conferir a partir do ultimo item se tem ball ou nao
-    // counter acionado só quando bolinha é colocada
+createMap();
