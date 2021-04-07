@@ -56,28 +56,39 @@ function game(ev){
     
     filho = document.createElement('div');
     columnSelected =ev.currentTarget.id;
+
     actualColumn =  document.getElementById(columnSelected)
-    
+    if(actualCel = actualColumn.getElementsByClassName("celulas")[0].childElementCount !== 0){
+        return;
+    }
+    counter++;
+
     for(let i = 0; i <= 5; i++){
+        
 
         actualCel = actualColumn.getElementsByClassName("celulas")[i];
-        console.log(actualCel);
+       console.log(actualCel)
         
         
-        
+        if(actualCel.childElementCount !== 0 ){
+            return;
+        }  
 
         if (actualCel.childElementCount === 0) {
-            
+            console.log(counter)
             if (counter % 2 === 0) {
                 actualCel.appendChild(filho);
                 filho.classList.add('ballRed');
-               
-            
+                console.log(counter)
+                
+                
             } else {
                 
                 actualCel.appendChild(filho);
                 filho.classList.add('ballBlack');
-                
+                console.log(counter)
+               
+               
 
             }
             
@@ -85,9 +96,7 @@ function game(ev){
     
     }
     
-    if(actualCel.childElementCount > 0){
-        counter++;
-    }
+   
 }
 
 column1.addEventListener("click", game)
