@@ -37,6 +37,7 @@ boardBuild(map);
 
 
 let counter = 0;
+
 let actualColumn;
 let actualCel;
 let columnSelected;
@@ -74,8 +75,8 @@ function game(ev){
             return;
         }  
 
-        if (actualCel.childElementCount === 0) {
-            console.log(counter)
+        if (actualCel.childElementCount === 0) { 
+            
             if (counter % 2 === 0) {
                 actualCel.appendChild(filho);
                 filho.classList.add('ballRed');
