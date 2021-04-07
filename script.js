@@ -1,12 +1,13 @@
 
 let map =   
-    ["nha  p",
-    "ba    ",
+    [
     "      ",
     "      ",
     "      ",
     "      ",
-    "ok    "
+    "      ",
+    "      ",
+    "      ",
     ];
 
 function boardBuild(arr){
@@ -15,8 +16,7 @@ function boardBuild(arr){
     for(let i = 0; i < arr.length; i++) {
         let coluna = document.createElement("div");
         coluna.classList.add("columns");
-        coluna.innerText = "Oi"
-        coluna.id = "column" + (i + 1);
+        coluna.id = "Column" + (i + 1);
         board.appendChild(coluna);
         
 
@@ -24,85 +24,80 @@ function boardBuild(arr){
         let pegaColuna = document.getElementsByClassName("columns")[i];
         for(let x = 0; x < celulas.length; x++) {
             let createCel = document.createElement("div");
-            createCel.id = `C${i + 1}L${x+1}`
             createCel.classList.add("celulas");
+            createCel.id = `C${i + 1}L${x + 1}`;
             pegaColuna.appendChild(createCel);
+
         }
+    
     }
     
 }
+boardBuild(map);
 
 
-    boardBuild(map)
-
-
-let column1= document.getElementById("column1");
-let column2 = document.getElementById("column2");
-let column3 = document.getElementById("column3");
-let column4 = document.getElementById("column4");
-let column5= document.getElementById("column5");
-let column6= document.getElementById("column6");
-let column7= document.getElementById("column7");
-// da para fazer uma função só de atribuição de Id, mas achei desnecessário
-
-let spreadMap;
+let counter = 0;
+let actualColumn;
 let actualCel;
-let celId;
-let childsCel;
+let columnSelected;
+let filho;
 
-let getCel;
+
+let column1 = document.getElementById("Column1");
+let column2 = document.getElementById("Column2");
+let column3 = document.getElementById("Column3");
+let column4 = document.getElementById("Column4");
+let column5 = document.getElementById("Column5");
+let column6 = document.getElementById("Column6");
+let column7 = document.getElementById("Column7");
+
+
 function game(ev){
-    let filho =document.createElement('div')
-    filho.classList.add('ballRed')
-    let touchColumn = ev.currentTarget.id;
-    let cel = ev.target
-    console.log(cel)
-    cel.appendChild(filho)
-  
-
-
-    for(let i = 5; i >= 0; i--){
-     actualCel =  document.getElementById(touchColumn).getElementsByClassName("celulas")[i];
     
-        celId = actualCel.id;
-        console.log(celId)
-        getCel = document.getElementById(celId);
-        childsCel = getCel.childElementCount;
-        console.log(childsCel)
+    filho = document.createElement('div');
+    columnSelected =ev.currentTarget.id;
+    actualColumn =  document.getElementById(columnSelected)
+    
+    for(let i = 0; i <= 5; i++){
 
-        // if(childsCel === 0){
-        //     count++;
-        //     if(count% 2 === 0){
+        actualCel = actualColumn.getElementsByClassName("celulas")[i];
+        console.log(actualCel);
+        
+        
+        
 
-        //     } else {
+        if (actualCel.childElementCount === 0) {
+            
+            if (counter % 2 === 0) {
+                actualCel.appendChild(filho);
+                filho.classList.add('ballRed');
+               
+            
+            } else {
+                
+                actualCel.appendChild(filho);
+                filho.classList.add('ballBlack');
+                
 
-        //     }
-        // }
-       
+            }
+            
+        }
+    
     }
-
-    // selecionar a coluna clicada
-    // fazer um for i--  que comece pelo 6
-    // conferir a partir do último filho se ele tem filho
-    // se não tiver, coloca a bolinha nele
-    // se tiver, vai para o proximo filho da coluna(divizinha)
-   
-    // let cel = document.getElementById('C1L6')
-    // let celChild = cel.childElementCount
-
-    // if(celChild !== 0){
-    //     celChild.appendChild(ball)
-    // }
     
-    
+    if(actualCel.childElementCount > 0){
+        counter++;
+    }
 }
-column1.addEventListener("click", game, victory, drawn);
-column2.addEventListener("click", game, victory, drawn);
-column3.addEventListener("click", game, victory, drawn);
-column4.addEventListener("click", game, victory, drawn);
-column5.addEventListener("click", game, victory, drawn);
-column6.addEventListener("click", game, victory, drawn);
-column7.addEventListener("click", game, victory, drawn);
+
+column1.addEventListener("click", game)
+column2.addEventListener("click", game)
+column3.addEventListener("click", game)
+column4.addEventListener("click", game)
+column5.addEventListener("click", game)
+column6.addEventListener("click", game)
+column7.addEventListener("click", game)
+
 
 function victory(){
 // 4 bolinhas vertical
