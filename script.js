@@ -10,13 +10,23 @@ let map =
     "      ",
     ];
 
+    let arrBi =[
+        [0,0,0,0,0,0],
+        [0,0,0,0,0,0],
+        [0,0,0,0,0,0],
+        [0,0,0,0,0,0],
+        [0,0,0,0,0,0],
+        [0,0,0,0,0,0],
+        [0,0,0,0,0,0]
+    ];
+       
 function boardBuild(arr){
     let board = document.getElementById("board");
 
     for(let i = 0; i < arr.length; i++) {
         let coluna = document.createElement("div");
         coluna.classList.add("columns");
-        coluna.id = "Column" + (i + 1);
+        coluna.id = i ;
         board.appendChild(coluna);
         
 
@@ -25,9 +35,10 @@ function boardBuild(arr){
         for(let x = 0; x < celulas.length; x++) {
             let createCel = document.createElement("div");
             createCel.classList.add("celulas");
+            createCel.classList.add(`celulas${x}`)
             createCel.id = `C${i + 1}L${x + 1}`;
             pegaColuna.appendChild(createCel);
-
+            
         }
     
     }
@@ -42,62 +53,55 @@ let actualColumn;
 let actualCel;
 let columnSelected;
 let filho;
+let idCelu;
+let lala;
+let soma;
+let columnPosition;
+let numCel;
+let child;
 
-
-let column1 = document.getElementById("Column1");
-let column2 = document.getElementById("Column2");
-let column3 = document.getElementById("Column3");
-let column4 = document.getElementById("Column4");
-let column5 = document.getElementById("Column5");
-let column6 = document.getElementById("Column6");
-let column7 = document.getElementById("Column7");
+let column1 = document.getElementById("0");
+let column2 = document.getElementById("1");
+let column3 = document.getElementById("2");
+let column4 = document.getElementById("3");
+let column5 = document.getElementById("4");
+let column6 = document.getElementById("5");
+let column7 = document.getElementById("6");
 
 
 function game(ev){
     
     filho = document.createElement('div');
     columnSelected =ev.currentTarget.id;
-
+   
+    columnPosition = parseInt(columnSelected);
+   
     actualColumn =  document.getElementById(columnSelected)
     if(actualCel = actualColumn.getElementsByClassName("celulas")[0].childElementCount !== 0){
         return;
     }
     counter++;
 
-    for(let i = 0; i <= 5; i++){
-        
+    redblackCount(actualColumn)
 
-        actualCel = actualColumn.getElementsByClassName("celulas")[i];
-       console.log(actualCel)
-        
-        
-        if(actualCel.childElementCount !== 0 ){
-            return;
-        }  
-
-        if (actualCel.childElementCount === 0) { 
-            
-            if (counter % 2 === 0) {
-                actualCel.appendChild(filho);
-                filho.classList.add('ballRed');
-                console.log(counter)
-                
-                
-            } else {
-                
-                actualCel.appendChild(filho);
-                filho.classList.add('ballBlack');
-                console.log(counter)
-               
-               
-
-            }
-            
-        }
-    
-    }
-    // chama vitoria
    
+    let oi = ev.currentTarget;
+    console.log(oi);
+    
+    for(let i =0; i < oi.children.length; i++){
+    
+        if(oi.children[i].childElementCount > 0){
+            child = oi.children[i].children;
+            redBlack(child,oi,i)
+
+        } else {
+            continue;
+        }
+        
+        
+    }
+    drawn()
+   console.log(arrBi)
 }
 
 column1.addEventListener("click", game)
@@ -109,28 +113,49 @@ column6.addEventListener("click", game)
 column7.addEventListener("click", game)
 
 
+
 function victory(){
 
 }
 victory()
 
-
-// function drawn(){
-//     let countCol = 0;
-//     for (let i = 0; i < 7; i++) {
-//         let idCel = `C${i + 1}L1`;
-//         let cel = document.getElementById(idCel);
-//         if(cel.hasChildNodes(true)) {
-//             countCol++
-//         }
-//     }
-//     console.log(countCol)
-//     if(countCol === 7) {
-//         return true
+function redblackCount(actualColumn){
+    for(let i = 0; i <= 5; i++){
         
-//     }
+
+        actualCel = actualColumn.children[i]
+        if(actualCel.childElementCount !== 0 ){
+            return;
+        }  
+
+        if (actualCel.childElementCount === 0) { 
+            
+            if (counter % 2 === 0) {
+                actualCel.appendChild(filho);
+                filho.classList.add('ballRed');
+                
+                
+            } else {
+                
+                actualCel.appendChild(filho);
+                filho.classList.add('ballBlack');
+                
     
-// }
+
+            }
+            
+        }
+    
+    }
+}
+
+function redBlack(child,oi,i){
+    if(child[0].classList.value === "ballBlack"){
+        arrBi[Number(oi.id)][i] = "B"
+    } else {
+        arrBi[Number(oi.id)][i] = "R"
+    }
+}
 
 const createMap = () => {
     let getBoard = document.getElementById('board');
@@ -144,3 +169,19 @@ const createMap = () => {
     return map;
 }
 createMap();
+
+function drawn(){
+    let countCol = 0;
+    for (let i = 0; i < 7; i++) {
+        let idCel = `C${i + 1}L1`;
+        let cel = document.getElementById(idCel);
+        if(cel.hasChildNodes(true)) {
+            countCol++
+        }
+    }
+    console.log(countCol)
+    if(countCol === 7) {
+        return true
+        
+    }
+}
