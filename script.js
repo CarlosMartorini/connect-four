@@ -35,9 +35,7 @@ function boardBuild(arr){
 boardBuild(map)
 
 let counter = 0;
-let celId;
-let getCel;
-let childsCel;
+
 let actualColumn;
 let actualCel;
 
@@ -55,7 +53,7 @@ function game(ev){
         actualCel = actualColumn.getElementsByClassName("celulas")[i];
         console.log(actualCel);
 
-        if (actualCel.childElementCount === 0) {
+        if (actualCel.childElementCount === 0) { 
             
             if (counter % 2 === 0) {
 
@@ -87,3 +85,40 @@ function drawn(){
 // quando todas as células forem preenchidas
 }
 drawn()
+
+
+
+
+
+
+
+
+
+/*******************************
+ *  CONDIÇÃO VITÓRIA DIAGONAL  *
+ *******************************/
+
+// criar um mapa 
+
+const createMap = () => {
+    let getBoard = document.getElementById('board');
+    let map = [];
+
+    for (let i = 0; i < 7; i++) {
+        map.push([]);
+        for (let j = 0; j < 6; j++) {
+            map[i].push(getBoard.children[i].children[j]);
+        }
+    }
+
+    return map;
+}
+
+// pegar a diagonal da matriz de 4 elementos
+    // diagonal ascendente esquerda
+    // diagonal ascendente direita
+    // diagonal descendente esquerda 
+    // diagonal descendente direita
+
+
+// verificar se essa diagonal todos os elementos contem a mesma classe (red or black)
