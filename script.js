@@ -1,6 +1,7 @@
 
 let map =   
-    ["      ",
+    [
+    "      ",
     "      ",
     "      ",
     "      ",
@@ -26,54 +27,77 @@ function boardBuild(arr){
             createCel.classList.add("celulas");
             createCel.id = `C${i + 1}L${x + 1}`;
             pegaColuna.appendChild(createCel);
-            // createCel.innerText = `${i + 1},${x + 1}`;
+
         }
+    
     }
     
 }
+boardBuild(map);
 
-boardBuild(map)
 
 let counter = 0;
-let celId;
-let getCel;
-let childsCel;
 let actualColumn;
 let actualCel;
+let columnSelected;
+let filho;
+
+
+let column1 = document.getElementById("Column1");
+let column2 = document.getElementById("Column2");
+let column3 = document.getElementById("Column3");
+let column4 = document.getElementById("Column4");
+let column5 = document.getElementById("Column5");
+let column6 = document.getElementById("Column6");
+let column7 = document.getElementById("Column7");
+
 
 function game(ev){
     
-    counter++;
-
-    let filho = document.createElement('div')
-    let columnSelected = ev.target.parentNode.id;
-    
+    filho = document.createElement('div');
+    columnSelected =ev.currentTarget.id;
     actualColumn =  document.getElementById(columnSelected)
     
     for(let i = 0; i <= 5; i++){
 
         actualCel = actualColumn.getElementsByClassName("celulas")[i];
         console.log(actualCel);
+        
+        
+        
 
         if (actualCel.childElementCount === 0) {
             
             if (counter % 2 === 0) {
-
                 actualCel.appendChild(filho);
                 filho.classList.add('ballRed');
-
+               
+            
             } else {
-
+                
                 actualCel.appendChild(filho);
                 filho.classList.add('ballBlack');
+                
 
             }
+            
         }
+    
     }
-
+    
+    if(actualCel.childElementCount > 0){
+        counter++;
+    }
 }
 
-document.addEventListener("click", game);
+column1.addEventListener("click", game)
+column2.addEventListener("click", game)
+column3.addEventListener("click", game)
+column4.addEventListener("click", game)
+column5.addEventListener("click", game)
+column6.addEventListener("click", game)
+column7.addEventListener("click", game)
+
 
 function victory(){
 // 4 bolinhas vertical
@@ -85,5 +109,18 @@ victory()
 
 function drawn(){
 // quando todas as células forem preenchidas
+// conferir 
 }
 drawn()
+
+ // receber os handlers de click usando o ev currentTarget da column
+
+    // contador de frequência : Carlos
+  
+    // usar o contador de frequencia para saber se a jogada é do R ou do B
+
+    // spread de cada string
+    // conferir o item com o indice baseado na coluna clicada
+    // fazer um arr com todo primeiro item dos arr que foram gerados
+    // fazer um for com i-- para conferir a partir do ultimo item se tem ball ou nao
+    // counter acionado só quando bolinha é colocada
