@@ -89,10 +89,13 @@ function game(ev){
     console.log(oi);
     
     for(let i =0; i < oi.children.length; i++){
-    
+        
         if(oi.children[i].childElementCount > 0){
             child = oi.children[i].children;
+            console.log(child)
             redBlack(child,oi,i)
+            
+           
 
         } else {
             continue;
@@ -101,7 +104,8 @@ function game(ev){
         
     }
     drawn()
-   console.log(arrBi)
+    
+   
 }
 
 column1.addEventListener("click", game)
@@ -118,6 +122,18 @@ function victory(){
 
 }
 victory()
+
+function verticalVictory(child, oi, i, arrBi){
+    if(arrBi[Number(oi.id)][i - 1] === arrBi[Number(oi.id)][i] && 
+    arrBi[Number(oi.id)][i - 2] === arrBi[Number(oi.id)][i] &&
+    arrBi[Number(oi.id)][i - 3] === arrBi[Number(oi.id)][i] 
+    ){
+        console.log("miau")
+    } 
+   
+}
+
+// percorrer todas as colunas so que na mesma posicao do elemento
 
 function redblackCount(actualColumn){
     for(let i = 0; i <= 5; i++){
@@ -150,10 +166,14 @@ function redblackCount(actualColumn){
 }
 
 function redBlack(child,oi,i){
+    let color;
     if(child[0].classList.value === "ballBlack"){
-        arrBi[Number(oi.id)][i] = "B"
+        arrBi[Number(oi.id)][i] = "B";
+        verticalVictory(child, oi, i, arrBi)
+    
     } else {
         arrBi[Number(oi.id)][i] = "R"
+        verticalVictory(child, oi, i, arrBi)
     }
 }
 
@@ -179,7 +199,7 @@ function drawn(){
             countCol++
         }
     }
-    console.log(countCol)
+   
     if(countCol === 7) {
         return true
         
