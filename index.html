@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>Lig-4</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,20 +19,48 @@
         <section id="instruct">
             <h2>Lig4</h2>
             <p>
-                No Lig-4, um jogador assume a cor Vermelha e o outro assume a cor Preta.
-                Os jogadores se alternam inserindo suas peças em uma das 7 colunas de uma tabela 7x6.
-                O primeiro jogador que conseguir quatro de suas peças em uma linha (seja horizontal,
+                No Lig-4, um jogador assume o gatinho branco e o outro assume o gatinho rajado.
+                Os jogadores se alternam inserindo seus gatinhos em uma das 7 colunas de uma tabela 7x6.
+                O primeiro jogador que conseguir quatro de seus gatinhos em uma linha (seja horizontal,
                 vertical ou diagonal) vence.
             </p>
+            <h3>Instruções:</h3>
+            <ul>
+                <li>Player 1 inicia o jogo.</li>
+                <li>Escolha seu gatinho.</li>
+                <li>Para dar empate voce precisa completar
+                    o tabuleiro de gatinhos.
+                </li>
+
+            </ul>
         </section>
         
-        <section id="area">
-            <button id="start" type="submit">start</button>
-            <div class="ballRed"></div>
+        <section id="jogo">
+            <button id="start" class=" hidden" type="submit">start</button>
+            <div id="jogadores">
+                <div id="player1">
+                    <div id="gatinho1"></div>
+                    <p id="jogador1">
+                        Player 1
+                    </p>
+                </div>
+
+                <div id="vs">
+                    <img src="img/vs.png" alt="vs" width="60px">
+                </div>
+
+                <div id="player2">
+                    <div id="gatinho2"></div>
+                    <p id="jogador2">
+                        Player 2
+                    </p>
+                </div>
+            </div>
             <!-- colocar hidden no board depois -->
             <div id="board"></div>
 
             <div id="victory" class="hidden"></div>
+            <div id="even" class="hidden"></div>
         </section>
     </main>
 
