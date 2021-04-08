@@ -241,6 +241,7 @@ function horizonVictory(child, oi, i, arrBi){
 }
 
 // percorrer todas as colunas so que na mesma posicao do elemento
+let actualBall;
 
 function redblackCount(actualColumn){
     for(let i = 0; i <= 5; i++){
@@ -256,20 +257,22 @@ function redblackCount(actualColumn){
             if (counter % 2 === 0) {
                 actualCel.appendChild(filho);
                 filho.classList.add('ballRed');
+                actualBall = "R";
                 
                 
             } else {
                 
                 actualCel.appendChild(filho);
                 filho.classList.add('ballBlack');
+                actualBall = "B";
                 
-    
 
             }
-            
+            turnPlayer(actualBall);
         }
-    
+        
     }
+    
 }
 
 function redBlack(child,oi,i){
@@ -416,4 +419,16 @@ function drawn(){
     column5.removeEventListener("click", game);
     column6.removeEventListener("click", game);
     column7.removeEventListener("click", game);
+ }
+
+let gameSection = document.getElementById("jogadores")
+let playerTurn = document.createElement('p');
+
+ const turnPlayer = (actualBall) => {
+    if(actualBall === "R"){
+        playerTurn.innerHTML = "Vez do player 1"
+    } else {
+        playerTurn.innerHTML = "Vez do player 2"
+    }
+    gameSection.appendChild(playerTurn);
  }
