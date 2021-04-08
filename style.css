@@ -1,5 +1,5 @@
 :root {
-    --fontFam: 'Roboto', sans-serif;
+    --fontFam: 'neon';
     --corFont: rgb(54, 54, 54);
     --corApoio: rgba(14, 14, 14, 0.5);
 }
@@ -8,7 +8,13 @@ body {
     font-family: var(--fontFam);
     color: var(--corFont);
     margin: 0;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(45deg,#214151, #a2d0c1, #eff7e1, #f8dc81);
+    background-size: 600% 600%;
+    animation: colors 10s ease infinite;
 }
+
 
 header {
     display: flex;
@@ -22,68 +28,150 @@ header img {
 }
 
 header h1 {
-    font-size: 26px;
+    font-size: 21px;
     margin: 5px 20px;
+    color: white;
 }
 
 main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
 #instruct {
-    margin: 10px 20px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 20px;
+    background-color: rgba(228, 226, 210, 0.5);
+    box-shadow: 5px 10px 10px rgba(75, 63, 63, 0.5);
+}
+
+#instruct h2 {
+    margin: 20px 0 5px;
 }
 
 #instruct p {
-    width: 300px;
+    width: 250px;
+    margin: 5px 0 20px;
 }
 
-#area {
+#instruct ul {
+    width: 250px;
+    list-style: ;
+}
+
+#jogo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px ;
+}
+
+#jogadores {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+    font-family: "neon";
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+#jogador1 {
+    color: green;
     margin: 0;
+}
+
+#jogador2 {
+    color: red;
+    margin: 0;
+}
+
+#player1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#player2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+#gatinho1 {
+    background-image: url(img/ballblack.png);
+    background-size: cover;
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    margin: 0 10px;
+} 
+
+#gatinho2 {
+    background-image: url(img/ballred.png);
+    background-size: cover;
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    margin: 0 10px;
+} 
+
+#vs {
+    
+    height: auto;
+    width: 60px;
+    margin-top: 10px;
+}
+
+.ballRed{
+    background-image: url(img/ballred.png);
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+
+}
+
+.ballBlack{
+    background-image: url(img/ballblack.png);
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
 }
 
 #board {
     display: flex;
     flex-direction: row;
-    width: 266px;
-    height: auto;
-    
-
 }
 
-
-.columns{
-
+.columns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .celulas {
-    width: 38px;
-    height: 38px;
-    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border: 1.5px solid rgb(31, 38, 78);
 }
 
-
-.ballRed{
-    background-color: red;
-    width: 30px;
-    height: 30px;
-    border-radius: 50px;
-}
-
-.ballBlack{
-    background-color: black;
-    width: 30px;
-    height: 30px;
-    border-radius: 50px;
-}
-
-/* 
 .hidden{
     display: none;
-} */
+}
+
+/* TELAS */
 
 @media only screen and (min-width: 992px) {
 
@@ -91,9 +179,26 @@ main {
         flex-direction: row;
     }
 
-    #board {
-        width: 518px;
-        margin: 5px 200px;
+    #jogo {
+        margin: 20px;
+        flex-direction: row;
+    }
+
+    #jogadores {
+        flex-direction: column;
+        align-items: center;
+    }    
+
+    #player2 {
+        flex-direction: column-reverse;
+    }
+
+    #gatinho1 {
+        width: 70px;
+    }
+
+    #gatinho2 {
+        width: 70px;
     }
 
     .celulas {
@@ -101,4 +206,35 @@ main {
         height: 70px;
         
     }
+    .ballBlack {
+        width: 40px;
+    }
+
+    .ballRed {
+        width: 40px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+
+}
+
+
+/* ANIMAÇÃO */
+
+@keyframes colors {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@font-face {
+    src: url(font/neon.ttf);
+    font-family: "neon";
 }
