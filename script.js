@@ -53,11 +53,7 @@ let actualColumn;
 let actualCel;
 let columnSelected;
 let filho;
-let idCelu;
-let lala;
-let soma;
 let columnPosition;
-let numCel;
 let child;
 
 let column1 = document.getElementById("0");
@@ -72,7 +68,7 @@ let column7 = document.getElementById("6");
 function game(ev){
     
     filho = document.createElement('div');
-    columnSelected =ev.currentTarget.id;
+    columnSelected = ev.currentTarget.id;
    
     columnPosition = parseInt(columnSelected);
    
@@ -85,15 +81,13 @@ function game(ev){
     redblackCount(actualColumn)
 
    
-    let oi = ev.currentTarget;
-    console.log(oi);
+    let evCurrTarg = ev.currentTarget;
     
-    for(let i =0; i < oi.children.length; i++){
+    for(let i =0; i < evCurrTarg.children.length; i++){
         
-        if(oi.children[i].childElementCount > 0){
-            child = oi.children[i].children;
-            console.log(child)
-            redBlack(child,oi,i)
+        if(evCurrTarg.children[i].childElementCount > 0){
+            child = evCurrTarg.children[i].children;
+            redBlack(child,evCurrTarg,i)
             
            
 
@@ -128,27 +122,21 @@ const addClick = () => {
 addClick();
 
 
-
-function victory(){
-
-}
-victory()
-
-function verticalVictory(child, oi, i, arrBi){
-    if(arrBi[Number(oi.id)][i - 1] === arrBi[Number(oi.id)][i] && 
-    arrBi[Number(oi.id)][i - 2] === arrBi[Number(oi.id)][i] &&
-    arrBi[Number(oi.id)][i - 3] === arrBi[Number(oi.id)][i] 
+function verticalVictory(child, evCurrTarg, i, arrBi){
+    if(arrBi[Number(evCurrTarg.id)][i - 1] === arrBi[Number(evCurrTarg.id)][i] && 
+    arrBi[Number(evCurrTarg.id)][i - 2] === arrBi[Number(evCurrTarg.id)][i] &&
+    arrBi[Number(evCurrTarg.id)][i - 3] === arrBi[Number(evCurrTarg.id)][i] 
     ){
-        console.log("miau")
+        removeClick();
     } 
    
 }
 
-function horizonVictory(child, oi, i, arrBi){
-    let primeiroindex = Number(oi.id);
-    // if(arrBi[primeiroindex - 1][i] === arrBi[Number(oi.id)][i] && 
-    // arrBi[primeiroindex - 2][i] === arrBi[Number(oi.id)][i] &&
-    // arrBi[primeiroindex - 3][i] === arrBi[Number(oi.id)][i] 
+function horizonVictory(child, evCurrTarg, i, arrBi){
+    let primeiroindex = Number(evCurrTarg.id);
+    // if(arrBi[primeiroindex - 1][i] === arrBi[Number(evCurrTarg.id)][i] && 
+    // arrBi[primeiroindex - 2][i] === arrBi[Number(evCurrTarg.id)][i] &&
+    // arrBi[primeiroindex - 3][i] === arrBi[Number(evCurrTarg.id)][i] 
     // ){
     //     console.log("gain")
     // }
@@ -157,7 +145,7 @@ function horizonVictory(child, oi, i, arrBi){
         arrBi[primeiroindex][i] === arrBi[primeiroindex+2][i] &&
         arrBi[primeiroindex][i] === arrBi[primeiroindex+3][i])
         {
-            console.log("gain");
+            removeClick();
         }
     }if (primeiroindex === 1){
         if((arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
@@ -168,7 +156,7 @@ function horizonVictory(child, oi, i, arrBi){
         arrBi[primeiroindex][i] === arrBi[primeiroindex+2][i] &&
         arrBi[primeiroindex][i] === arrBi[primeiroindex+3][i])
         ){
-            console.log("gain");
+            removeClick();
         }
     }if (primeiroindex === 2){
         if((arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
@@ -183,7 +171,7 @@ function horizonVictory(child, oi, i, arrBi){
         arrBi[primeiroindex][i] === arrBi[primeiroindex+2][i] &&
         arrBi[primeiroindex][i] === arrBi[primeiroindex+3][i])
         ){
-            console.log("gain");
+            removeClick();
         }
     }if (primeiroindex === 3){
         if((arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
@@ -202,7 +190,7 @@ function horizonVictory(child, oi, i, arrBi){
         arrBi[primeiroindex][i] === arrBi[primeiroindex+2][i] &&
         arrBi[primeiroindex][i] === arrBi[primeiroindex+3][i])
         ){
-            console.log("gain");
+            removeClick();
         }
     }if (primeiroindex === 4){
         if((arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
@@ -217,7 +205,7 @@ function horizonVictory(child, oi, i, arrBi){
         arrBi[primeiroindex][i] === arrBi[primeiroindex-2][i] &&
         arrBi[primeiroindex][i] === arrBi[primeiroindex-3][i])
         ){
-            console.log("gain");
+            removeClick();
         }
     }if (primeiroindex === 5){
         if((arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
@@ -228,19 +216,20 @@ function horizonVictory(child, oi, i, arrBi){
         arrBi[primeiroindex][i] === arrBi[primeiroindex-2][i] &&
         arrBi[primeiroindex][i] === arrBi[primeiroindex-3][i])
         ){
-            console.log("gain");
+            removeClick();
         }
     }if (primeiroindex === 6){
         if(arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
         arrBi[primeiroindex][i] === arrBi[primeiroindex-2][i] &&
         arrBi[primeiroindex][i] === arrBi[primeiroindex-3][i])
         {
-            console.log("gain");
+            removeClick();
         }
     }
 }
 
 // percorrer todas as colunas so que na mesma posicao do elemento
+let actualBall;
 
 function redblackCount(actualColumn){
     for(let i = 0; i <= 5; i++){
@@ -256,33 +245,35 @@ function redblackCount(actualColumn){
             if (counter % 2 === 0) {
                 actualCel.appendChild(filho);
                 filho.classList.add('ballRed');
+                actualBall = "R";
                 
                 
             } else {
                 
                 actualCel.appendChild(filho);
                 filho.classList.add('ballBlack');
+                actualBall = "B";
                 
-    
 
             }
-            
+            turnPlayer(actualBall);
         }
-    
+        
     }
+    
 }
 
-function redBlack(child,oi,i){
+function redBlack(child,evCurrTarg,i){
     let color;
     if(child[0].classList.value === "ballBlack"){
-        arrBi[Number(oi.id)][i] = "B";
-        verticalVictory(child, oi, i, arrBi)
-        horizonVictory(child, oi, i, arrBi)
+        arrBi[Number(evCurrTarg.id)][i] = "B";
+        verticalVictory(child, evCurrTarg, i, arrBi)
+        horizonVictory(child, evCurrTarg, i, arrBi)
     
     } else {
-        arrBi[Number(oi.id)][i] = "R"
-        verticalVictory(child, oi, i, arrBi)
-        horizonVictory(child, oi, i, arrBi)
+        arrBi[Number(evCurrTarg.id)][i] = "R"
+        verticalVictory(child, evCurrTarg, i, arrBi)
+        horizonVictory(child, evCurrTarg, i, arrBi)
     }
 }
 
@@ -310,6 +301,7 @@ function drawn(){
     }
    
     if(countCol === 7) {
+        removeClick();
         return true
         
     }
@@ -349,16 +341,12 @@ function drawn(){
  
     if (upRight(black)) {
 
-        console.log("VENCEDOR BLACK UP RIGHT!");
-
         removeClick();
 
         getVictory.classList.remove('hidden');
 
 
     } else if (upRight(red)) {
-    
-        console.log("VENCEDOR RED UP RIGHT!");
 
         removeClick();
         
@@ -387,15 +375,11 @@ function drawn(){
  
     if (upLeft(black)) {
 
-        console.log("VENCEDOR BLACK UP LEFT!"); 
-
         removeClick();
         
         getVictory.classList.remove('hidden');
 
-    } else if (upLeft(red)) {
-    
-        console.log("VENCEDOR RED UP LEFT!");    
+    } else if (upLeft(red)) { 
 
         removeClick();
         
@@ -417,3 +401,57 @@ function drawn(){
     column6.removeEventListener("click", game);
     column7.removeEventListener("click", game);
  }
+
+
+let gatinho1 = document.getElementById('jogador1')
+let gatinho2 = document.getElementById('jogador2')
+
+ const turnPlayer = (actualBall) => {
+    if(actualBall === "R"){
+        gatinho2.classList.remove('borderGatinho2')
+        gatinho1.classList.add('borderGatinho1')
+        
+    } else {
+        gatinho1.classList.remove('borderGatinho1')
+        gatinho2.classList.add('borderGatinho2')
+    }
+   
+}
+ /*****************
+  *  RESTART GAME *
+  *****************/
+
+ const restartGame = () => {
+    
+    arrBi =[
+        [0,0,0,0,0,0],
+        [0,0,0,0,0,0],
+        [0,0,0,0,0,0],
+        [0,0,0,0,0,0],
+        [0,0,0,0,0,0],
+        [0,0,0,0,0,0],
+        [0,0,0,0,0,0]
+    ];
+
+    getVictory.classList.add('hidden');
+
+    let getBoard = document.getElementById('board');
+    getBoard.innerHTML = '';
+
+    boardBuild(map);
+
+    counter = 0;
+
+    column1 = document.getElementById("0");
+    column2 = document.getElementById("1");
+    column3 = document.getElementById("2");
+    column4 = document.getElementById("3");
+    column5 = document.getElementById("4");
+    column6 = document.getElementById("5");
+    column7 = document.getElementById("6");
+    
+    addClick();    
+
+ }
+
+ 
