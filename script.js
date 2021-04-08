@@ -276,6 +276,7 @@ function verticalVictory(child, evCurrTarg, i, arrBi){
 // }
 
 // percorrer todas as colunas so que na mesma posicao do elemento
+let actualBall;
 
 function redblackCount(actualColumn){
     for(let i = 0; i <= 5; i++){
@@ -291,20 +292,22 @@ function redblackCount(actualColumn){
             if (counter % 2 === 0) {
                 actualCel.appendChild(filho);
                 filho.classList.add('ballRed');
+                actualBall = "R";
                 
                 
             } else {
                 
                 actualCel.appendChild(filho);
                 filho.classList.add('ballBlack');
+                actualBall = "B";
                 
-    
 
             }
-            
+            turnPlayer(actualBall);
         }
-    
+        
     }
+    
 }
 
 function redBlack(child,evCurrTarg,i){
@@ -446,6 +449,21 @@ function drawn(){
     column7.removeEventListener("click", game);
  }
 
+
+let gatinho1 = document.getElementById('jogador1')
+let gatinho2 = document.getElementById('jogador2')
+
+ const turnPlayer = (actualBall) => {
+    if(actualBall === "R"){
+        gatinho2.classList.remove('borderGatinho2')
+        gatinho1.classList.add('borderGatinho1')
+        
+    } else {
+        gatinho1.classList.remove('borderGatinho1')
+        gatinho2.classList.add('borderGatinho2')
+    }
+   
+}
  /*****************
   *  RESTART GAME *
   *****************/
@@ -482,3 +500,5 @@ function drawn(){
     addClick();    
 
  }
+
+ 
