@@ -10,11 +10,10 @@ body {
     margin: 0;
     height: 100vh;
     width: 100vw;
-    background: linear-gradient(45deg,#214151, #a2d0c1, #eff7e1, #f8dc81);
+    background: linear-gradient(45deg,#121013, #4d375d, #eb596e, #ee3960);
     background-size: 600% 600%;
     animation: colors 10s ease infinite;
 }
-
 
 header {
     display: flex;
@@ -40,6 +39,8 @@ main {
     align-items: center;
 }
 
+/* INSTRUÇOES */
+
 #instruct {
     width: 300px;
     display: flex;
@@ -47,23 +48,34 @@ main {
     justify-content: center;
     align-items: center;
     margin: 20px 20px;
-    background-color: rgba(228, 226, 210, 0.5);
-    box-shadow: 5px 10px 10px rgba(75, 63, 63, 0.5);
+    background-color: rgba(253, 253, 253, 0.5);
+    border: 3px solid rgb(120, 141, 255);
+    box-shadow: 10px 10px 30px rgba(36, 69, 255, 0.8);
+    border-radius: 10%;
 }
 
 #instruct h2 {
+    font-size: 30px;
     margin: 20px 0 5px;
 }
 
 #instruct p {
+    font-size: 20px;
     width: 250px;
     margin: 5px 0 20px;
+}
+#instruct h3 {
+    font-size: 24px;
+    margin: 5px 0;
 }
 
 #instruct ul {
     width: 250px;
-    list-style: ;
+    margin: 0 0 20px 0;
+    font-size: 20px;
 }
+
+/* JOGO */
 
 #jogo {
     display: flex;
@@ -78,17 +90,20 @@ main {
     margin: 20px;
     font-family: "neon";
     font-size: 24px;
-    text-transform: uppercase;
 }
 
 #jogador1 {
-    color: green;
     margin: 0;
+    font-size: 30px;
+    color: rgb(255, 133, 200);
+    text-shadow: 0px 0px 7px rgb(226, 22, 134);
 }
 
 #jogador2 {
-    color: red;
     margin: 0;
+    font-size: 30px;
+    color: rgb(110, 255, 110);
+    text-shadow: 0px 0px 7px rgb(30, 253, 30);
 }
 
 #player1 {
@@ -130,21 +145,18 @@ main {
     margin-top: 10px;
 }
 
-.ballRed{
+.ballRed {
     background-image: url(img/ballred.png);
     background-size: cover;
     width: 40px;
     height: 40px;
-    border-radius: 50px;
-
 }
 
-.ballBlack{
+.ballBlack {
     background-image: url(img/ballblack.png);
     background-size: cover;
     width: 40px;
     height: 40px;
-    border-radius: 50px;
 }
 
 #board {
@@ -164,7 +176,9 @@ main {
     align-items: center;
     width: 35px;
     height: 35px;
-    border: 1.5px solid rgb(31, 38, 78);
+    border: 2px solid rgb(169, 252, 252);
+    border-radius: 20%;
+    box-shadow: 5px 5px 20px rgb(1, 255, 255);
 }
 
 .hidden{
@@ -180,7 +194,7 @@ main {
     }
 
     #jogo {
-        margin: 20px;
+        margin: 50px 20px 20px;
         flex-direction: row;
     }
 
