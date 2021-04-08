@@ -111,13 +111,21 @@ function game(ev){
    
 }
 
-column1.addEventListener("click", game)
-column2.addEventListener("click", game)
-column3.addEventListener("click", game)
-column4.addEventListener("click", game)
-column5.addEventListener("click", game)
-column6.addEventListener("click", game)
-column7.addEventListener("click", game)
+/************************
+  *  ADD EVENTO DE CLICK *
+  ************************/
+
+const addClick = () => {
+    column1.addEventListener("click", game);
+    column2.addEventListener("click", game);
+    column3.addEventListener("click", game);
+    column4.addEventListener("click", game);
+    column5.addEventListener("click", game);
+    column6.addEventListener("click", game);
+    column7.addEventListener("click", game);
+}
+
+addClick();
 
 
 
@@ -343,12 +351,16 @@ function drawn(){
 
         console.log("VENCEDOR BLACK UP RIGHT!");
 
+        removeClick();
+
         getVictory.classList.remove('hidden');
 
 
     } else if (upRight(red)) {
     
         console.log("VENCEDOR RED UP RIGHT!");
+
+        removeClick();
         
         getVictory.classList.remove('hidden');
 
@@ -376,14 +388,32 @@ function drawn(){
     if (upLeft(black)) {
 
         console.log("VENCEDOR BLACK UP LEFT!"); 
+
+        removeClick();
         
         getVictory.classList.remove('hidden');
 
     } else if (upLeft(red)) {
     
         console.log("VENCEDOR RED UP LEFT!");    
+
+        removeClick();
         
         getVictory.classList.remove('hidden');
 
     }   
+ }
+
+ /***************************
+  *  REMOVE EVENTO DE CLICK *
+  ***************************/
+
+ const removeClick = () => {
+    column1.removeEventListener("click", game);
+    column2.removeEventListener("click", game);
+    column3.removeEventListener("click", game);
+    column4.removeEventListener("click", game);
+    column5.removeEventListener("click", game);
+    column6.removeEventListener("click", game);
+    column7.removeEventListener("click", game);
  }
