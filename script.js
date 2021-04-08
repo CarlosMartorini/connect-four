@@ -103,6 +103,9 @@ function game(ev){
         
         
     }
+
+    winDiagonalCondition();
+
     drawn()
     
    
@@ -205,3 +208,149 @@ function drawn(){
         
     }
 }
+
+/*********************************
+ *  CONDIÇÃO DE VITÓRIA DIAGONAL *
+ *********************************/
+
+ let getVictory = document.getElementById('victory');
+
+ const winDiagonalCondition = () => {
+     diagonalUpRight();
+     diagonalUpLeft();
+     diagonalDownRight();
+     diagonalDownLeft();
+ }
+ 
+ const diagonalUpRight = () => {
+     for (let i = 0; i < arrBi.length; i++) {
+         for (let j = 0; j < arrBi[i].length; j++) {
+ 
+             if (arrBi[i][j] === "B" && 
+                 (i + 1) < 7 && (j - 1) > -1 &&
+                 arrBi[i + 1][j - 1] === "B" &&
+                 (i + 2) < 7 && (j - 2) > -1 &&
+                 arrBi[i + 2][j - 2] === "B" &&
+                 (i + 3) < 7 && (j - 3) > -1 &&
+                 arrBi[i + 3][j - 3] === "B") {
+ 
+             console.log("VENCEDOR BLACK UP RIGHT!");
+ 
+             getVictory.classList.remove('hidden');
+ 
+ 
+             } else if (arrBi[i][j] === "R" && 
+                     (i + 1) < 7 && (j - 1) > -1 &&
+                     arrBi[i + 1][j - 1] === "R" &&
+                     (i + 2) < 7 && (j - 2) > -1 &&
+                     arrBi[i + 2][j - 2] === "R" &&
+                     (i + 3) < 7 && (j - 3) > -1 &&
+                     arrBi[i + 3][j - 3] === "R") {
+             
+             console.log("VENCEDOR RED UP RIGHT!");
+             
+             getVictory.classList.remove('hidden');
+ 
+             }
+         }
+     }
+ }
+ 
+ const diagonalUpLeft = () => {
+     for (let i = 0; i < arrBi.length; i++) {
+         for (let j = 0; j < arrBi[i].length; j++) {
+ 
+             if (arrBi[i][j] === "B" && 
+                 (i - 1) > -1 && (j - 1) > -1 &&
+                 arrBi[i - 1][j - 1] === "B" &&
+                 (i - 2) > -1 && (j - 2) > -1 &&
+                 arrBi[i - 2][j - 2] === "B" &&
+                 (i - 3) > -1 && (j - 3) > -1 &&
+                 arrBi[i - 3][j - 3] === "B") {
+ 
+                 console.log("VENCEDOR BLACK UP LEFT!"); 
+                 
+                 getVictory.classList.remove('hidden');
+ 
+             } else if (arrBi[i][j] === "R" && 
+                         (i - 1) > -1 && (j - 1) > -1 &&
+                         arrBi[i - 1][j - 1] === "R" &&
+                         (i - 2) > -1 && (j - 2) > -1 &&
+                         arrBi[i - 2][j - 2] === "R" &&
+                         (i - 3) > -1 && (j - 3) > -1 &&
+                         arrBi[i - 3][j - 3] === "R") {
+             
+                 console.log("VENCEDOR RED UP LEFT!");    
+                 
+                 getVictory.classList.remove('hidden');
+ 
+             }   
+         }
+     }
+ }
+ 
+ const diagonalDownRight = () => {
+     for (let i = 0; i < arrBi.length; i++) {
+         for (let j = 0; j < arrBi[i].length; j++) {
+ 
+             if (arrBi[i][j] === "B" && 
+                 (i + 1) < 7 && (j + 1) < 6 &&    
+                 arrBi[i + 1][j + 1] === "B" &&
+                 (i + 2) < 7 && (j + 2) < 6 &&
+                 arrBi[i + 2][j + 2] === "B" &&
+                 (i + 3) < 7 && (j + 3) < 6 &&
+                 arrBi[i + 3][j + 3] === "B") {
+ 
+                 console.log("VENCEDOR BLACK DOWN RIGHT!");  
+                 
+                 getVictory.classList.remove('hidden');
+ 
+             } else if (arrBi[i][j] === "R" && 
+                         (i + 1) < 7 && (j + 1) < 6 &&
+                         arrBi[i + 1][j + 1] === "R" &&
+                         (i + 2) < 7 && (j + 2) < 6 &&
+                         arrBi[i + 2][j + 2] === "R" &&
+                         (i + 3) < 7 && (j + 3) < 6 &&
+                         arrBi[i + 3][j + 3] === "R") {
+                         
+                 console.log("VENCEDOR RED DOWN RIGHT!");
+ 
+                 getVictory.classList.remove('hidden');
+             }
+         }
+     }
+ }
+ 
+ const diagonalDownLeft = () => {
+     for (let i = 0; i < arrBi.length; i++) {
+         for (let j = 0; j < arrBi[i].length; j++) {
+ 
+             if (arrBi[i][j] === "B" &&
+                 (i - 1) > -1 && (j + 1) < 6 &&
+                 arrBi[i - 1][j + 1] === "B" &&
+                 (i - 2) > -1 && (j + 2) < 6 &&
+                 arrBi[i - 2][j + 2] === "B" &&
+                 (i - 3) > -1 && (j + 3) < 6 &&
+                 arrBi[i - 3][j + 3] === "B") {
+ 
+                 console.log("VENCEDOR BLACK DOWN LEFT!");
+                 
+                 getVictory.classList.remove('hidden');
+ 
+             } else if (arrBi[i][j] === "R" &&
+                         (i - 1) > -1 && (j + 1) < 6 &&
+                         arrBi[i - 1][j + 1] === "R" &&
+                         (i - 2) > -1 && (j + 2) < 6 &&
+                         arrBi[i - 2][j + 2] === "R" &&
+                         (i - 3) > -1 && (j + 3) < 6 &&
+                         arrBi[i - 3][j + 3] === "R") {
+             
+                 console.log("VENCEDOR RED DOWN LEFT!");
+ 
+                 getVictory.classList.remove('hidden');
+             }
+ 
+         }
+     }
+ }
+ 
