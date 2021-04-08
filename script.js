@@ -133,6 +133,102 @@ function verticalVictory(child, oi, i, arrBi){
    
 }
 
+function horizonVictory(child, oi, i, arrBi){
+    let primeiroindex = Number(oi.id);
+    // if(arrBi[primeiroindex - 1][i] === arrBi[Number(oi.id)][i] && 
+    // arrBi[primeiroindex - 2][i] === arrBi[Number(oi.id)][i] &&
+    // arrBi[primeiroindex - 3][i] === arrBi[Number(oi.id)][i] 
+    // ){
+    //     console.log("gain")
+    // }
+    if (primeiroindex === 0){
+        if(arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
+        arrBi[primeiroindex][i] === arrBi[primeiroindex+2][i] &&
+        arrBi[primeiroindex][i] === arrBi[primeiroindex+3][i])
+        {
+            console.log("gain");
+        }
+    }if (primeiroindex === 1){
+        if((arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
+        arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
+        arrBi[primeiroindex][i] === arrBi[primeiroindex+2][i])
+        ||
+        (arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
+        arrBi[primeiroindex][i] === arrBi[primeiroindex+2][i] &&
+        arrBi[primeiroindex][i] === arrBi[primeiroindex+3][i])
+        ){
+            console.log("gain");
+        }
+    }if (primeiroindex === 2){
+        if((arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
+        arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
+        arrBi[primeiroindex][i] === arrBi[primeiroindex-2][i]) 
+        ||
+        (arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
+        arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
+        arrBi[primeiroindex][i] === arrBi[primeiroindex+2][i])
+        ||
+        (arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
+        arrBi[primeiroindex][i] === arrBi[primeiroindex+2][i] &&
+        arrBi[primeiroindex][i] === arrBi[primeiroindex+3][i])
+        ){
+            console.log("gain");
+        }
+    }if (primeiroindex === 3){
+        if((arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
+        arrBi[primeiroindex][i] === arrBi[primeiroindex-2][i] &&
+        arrBi[primeiroindex][i] === arrBi[primeiroindex-3][i]) 
+        ||
+        (arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
+        arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
+        arrBi[primeiroindex][i] === arrBi[primeiroindex-2][i]) 
+        ||
+        (arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
+        arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
+        arrBi[primeiroindex][i] === arrBi[primeiroindex+2][i]) 
+        ||
+        (arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
+        arrBi[primeiroindex][i] === arrBi[primeiroindex+2][i] &&
+        arrBi[primeiroindex][i] === arrBi[primeiroindex+3][i])
+        ){
+            console.log("gain");
+        }
+    }if (primeiroindex === 4){
+        if((arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
+        arrBi[primeiroindex][i] === arrBi[primeiroindex-2][i] &&
+        arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i]) 
+        ||
+        (arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
+        arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
+        arrBi[primeiroindex][i] === arrBi[primeiroindex+2][i])
+        ||
+        (arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
+        arrBi[primeiroindex][i] === arrBi[primeiroindex-2][i] &&
+        arrBi[primeiroindex][i] === arrBi[primeiroindex-3][i])
+        ){
+            console.log("gain");
+        }
+    }if (primeiroindex === 5){
+        if((arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
+        arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
+        arrBi[primeiroindex][i] === arrBi[primeiroindex-2][i]) 
+        ||
+        (arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
+        arrBi[primeiroindex][i] === arrBi[primeiroindex-2][i] &&
+        arrBi[primeiroindex][i] === arrBi[primeiroindex-3][i])
+        ){
+            console.log("gain");
+        }
+    }if (primeiroindex === 6){
+        if(arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
+        arrBi[primeiroindex][i] === arrBi[primeiroindex-2][i] &&
+        arrBi[primeiroindex][i] === arrBi[primeiroindex-3][i])
+        {
+            console.log("gain");
+        }
+    }
+}
+
 // percorrer todas as colunas so que na mesma posicao do elemento
 
 function redblackCount(actualColumn){
@@ -170,10 +266,12 @@ function redBlack(child,oi,i){
     if(child[0].classList.value === "ballBlack"){
         arrBi[Number(oi.id)][i] = "B";
         verticalVictory(child, oi, i, arrBi)
+        horizonVictory(child, oi, i, arrBi)
     
     } else {
         arrBi[Number(oi.id)][i] = "R"
         verticalVictory(child, oi, i, arrBi)
+        horizonVictory(child, oi, i, arrBi)
     }
 }
 
