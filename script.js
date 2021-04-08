@@ -72,7 +72,8 @@ let column7 = document.getElementById("6");
 function game(ev){
     
     filho = document.createElement('div');
-    columnSelected =ev.currentTarget.id;
+    columnSelected = ev.currentTarget.id;
+    console.log(columnSelected);
    
     columnPosition = parseInt(columnSelected);
    
@@ -129,10 +130,10 @@ addClick();
 
 
 
-function victory(){
+// function victory(){
 
-}
-victory()
+// }
+// victory()
 
 function verticalVictory(child, oi, i, arrBi){
     if(arrBi[Number(oi.id)][i - 1] === arrBi[Number(oi.id)][i] && 
@@ -416,4 +417,41 @@ function drawn(){
     column5.removeEventListener("click", game);
     column6.removeEventListener("click", game);
     column7.removeEventListener("click", game);
+ }
+
+ /*****************
+  *  RESTART GAME *
+  *****************/
+
+ const restartGame = () => {
+    
+    arrBi =[
+        [0,0,0,0,0,0],
+        [0,0,0,0,0,0],
+        [0,0,0,0,0,0],
+        [0,0,0,0,0,0],
+        [0,0,0,0,0,0],
+        [0,0,0,0,0,0],
+        [0,0,0,0,0,0]
+    ];
+
+    getVictory.classList.add('hidden');
+
+    let getBoard = document.getElementById('board');
+    getBoard.innerHTML = '';
+
+    boardBuild(map);
+
+    counter = 0;
+    
+    column1 = document.getElementById("0");
+    column2 = document.getElementById("1");
+    column3 = document.getElementById("2");
+    column4 = document.getElementById("3");
+    column5 = document.getElementById("4");
+    column6 = document.getElementById("5");
+    column7 = document.getElementById("6");
+    
+    addClick();    
+
  }
