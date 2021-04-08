@@ -62,7 +62,7 @@ main {
 
 #instruct ul {
     width: 250px;
-    list-style: ;
+    /* list-style: ; */
 }
 
 #jogo {
@@ -169,6 +169,15 @@ main {
 
 .hidden{
     display: none;
+}
+
+.borderGatinho1{
+    text-shadow: 0px 0px 10px rgb(34, 97, 34);
+
+}
+
+.borderGatinho2{
+    text-shadow: 0px 0px 10px rgb(175, 45, 45);
 }
 
 /* TELAS */
