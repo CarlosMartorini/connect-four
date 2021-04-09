@@ -219,15 +219,10 @@ let audioCat1 = document.getElementById("audiocat1");
 let audioCat2 = document.getElementById("audiocat2");
 let audioCat3 = document.getElementById("audiocat3");
 let musicCachorres = document.getElementById("cachorres");
+musicCachorres.currentTime = 1;
+musicCachorres.volume = 0.5;
+musicCachorres.play();
 
-
-function music(){
-    musicCachorres.currentTime = 0.8;
-    musicCachorres.volume = 0.2;
-    musicCachorres.play();
-    
-}
-music();
 
 
 
