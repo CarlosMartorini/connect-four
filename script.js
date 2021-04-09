@@ -121,12 +121,16 @@ const addClick = () => {
 
 addClick();
 
+let getVictory = document.getElementById('victory');
+let sectionGame = document.getElementById('teste');
+let drawnMensage = document.getElementById('drawn');
 
 function verticalVictory(child, evCurrTarg, i, arrBi){
     if(arrBi[Number(evCurrTarg.id)][i - 1] === arrBi[Number(evCurrTarg.id)][i] && 
     arrBi[Number(evCurrTarg.id)][i - 2] === arrBi[Number(evCurrTarg.id)][i] &&
     arrBi[Number(evCurrTarg.id)][i - 3] === arrBi[Number(evCurrTarg.id)][i] 
     ){
+        victory()
         removeClick();
     } 
    
@@ -228,7 +232,7 @@ function horizonVictory(child, evCurrTarg, i, arrBi){
     }
 }
 
-// percorrer todas as colunas so que na mesma posicao do elemento
+
 let actualBall;
 
 function redblackCount(actualColumn){
@@ -264,7 +268,7 @@ function redblackCount(actualColumn){
 }
 
 function redBlack(child,evCurrTarg,i){
-    let color;
+
     if(child[0].classList.value === "ballBlack"){
         arrBi[Number(evCurrTarg.id)][i] = "B";
         verticalVictory(child, evCurrTarg, i, arrBi)
@@ -302,6 +306,7 @@ function drawn(){
    
     if(countCol === 7) {
         removeClick();
+        drawnMensage.classList.remove('hidden');
         return true
         
     }
@@ -311,7 +316,6 @@ function drawn(){
  *  CONDIÇÃO DE VITÓRIA DIAGONAL *
  *********************************/
 
- let getVictory = document.getElementById('victory');
 
  const black = "B";
  const red = "R";
@@ -343,14 +347,14 @@ function drawn(){
 
         removeClick();
 
-        getVictory.classList.remove('hidden');
+        victory();
 
 
     } else if (upRight(red)) {
 
         removeClick();
         
-        getVictory.classList.remove('hidden');
+        victory();
 
     }
  }
@@ -377,13 +381,13 @@ function drawn(){
 
         removeClick();
         
-        getVictory.classList.remove('hidden');
+        victory()
 
     } else if (upLeft(red)) { 
 
         removeClick();
         
-        getVictory.classList.remove('hidden');
+       victory()
 
     }   
  }
@@ -403,8 +407,8 @@ function drawn(){
  }
 
 
-let gatinho1 = document.getElementById('jogador1')
-let gatinho2 = document.getElementById('jogador2')
+let gatinho1 = document.getElementById('gatinho1')
+let gatinho2 = document.getElementById('gatinho2')
 
  const turnPlayer = (actualBall) => {
     if(actualBall === "R"){
@@ -421,6 +425,10 @@ let gatinho2 = document.getElementById('jogador2')
   *  RESTART GAME *
   *****************/
 
+
+let btnreset = document.getElementById("btnreset");
+
+
  const restartGame = () => {
     
     arrBi =[
@@ -434,6 +442,8 @@ let gatinho2 = document.getElementById('jogador2')
     ];
 
     getVictory.classList.add('hidden');
+    drawnMensage.classList.add('hidden');
+    sectionGame.classList.remove('hidden');
 
     let getBoard = document.getElementById('board');
     getBoard.innerHTML = '';
@@ -453,5 +463,11 @@ let gatinho2 = document.getElementById('jogador2')
     addClick();    
 
  }
+ btnreset.addEventListener("click",restartGame);
 
- 
+
+ function victory(){
+    getVictory.classList.remove('hidden')
+    sectionGame.classList.add('hidden');
+
+ }
