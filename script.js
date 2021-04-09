@@ -121,7 +121,7 @@ const addClick = () => {
 }
 
 addClick();
-
+let getVictory2 = document.getElementById('victory2');
 let getVictory = document.getElementById('victory1');
 let sectionGame = document.getElementById('teste');
 let drawnMensage = document.getElementById('drawn');
@@ -131,8 +131,14 @@ function verticalVictory(child, evCurrTarg, i, arrBi){
     arrBi[Number(evCurrTarg.id)][i - 2] === arrBi[Number(evCurrTarg.id)][i] &&
     arrBi[Number(evCurrTarg.id)][i - 3] === arrBi[Number(evCurrTarg.id)][i] 
     ){
-        victory()
-        removeClick();
+        if(child[0].classList.value === "ballBlack") {
+            victory()
+            removeClick();
+        } else {
+            victory2()
+            removeClick();
+        }
+        
     } 
    
 }
@@ -175,7 +181,7 @@ function verticalVictory(child, evCurrTarg, i, arrBi){
         removeClick();
         console.log("horizontal red")
         
-        getVictory.classList.remove('hidden');
+        getVictory2.classList.remove('hidden');
 
     }
 
@@ -221,15 +227,6 @@ let audioCat3 = document.getElementById("audiocat3");
 let musicCachorres = document.getElementById("cachorres");
 
 
-function music(){
-    musicCachorres.currentTime = 0.8;
-    musicCachorres.volume = 0.2;
-    musicCachorres.play();
-    
-}
-music();
-
-
 
 function redBlack(child,evCurrTarg,i){
     
@@ -237,8 +234,8 @@ function redBlack(child,evCurrTarg,i){
         arrBi[Number(evCurrTarg.id)][i] = "B";
         verticalVictory(child, evCurrTarg, i, arrBi)
         audioCat1.play();
-        
-        
+       
+        // vitoria do black
         // horizonVictory(child, evCurrTarg, i, arrBi)
     
     } else {
@@ -246,7 +243,8 @@ function redBlack(child,evCurrTarg,i){
         verticalVictory(child, evCurrTarg, i, arrBi)
         audioCat2.play();
        
-
+        
+        // vitoria do red
         // horizonVictory(child, evCurrTarg, i, arrBi)
     }
 }
@@ -319,15 +317,14 @@ function drawn(){
     if (upRight(black)) {
 
         removeClick();
-
         victory();
 
 
     } else if (upRight(red)) {
 
+        victory2();
         removeClick();
         
-        victory();
 
     }
  }
@@ -357,10 +354,9 @@ function drawn(){
         victory()
 
     } else if (upLeft(red)) { 
-
-        removeClick();
         
-       victory()
+       victory2()
+       removeClick();
 
     }   
  }
@@ -399,8 +395,9 @@ let gatinho2 = document.getElementById('gatinho2')
   *****************/
 
 
-let btnreset = document.getElementById("btnreset1");
-
+let btnreset = document.getElementById("btnreset");
+let btnreset1 =document.getElementById("btnreset1");
+let btnreset2 =document.getElementById("btnreset2");
 
  const restartGame = () => {
     
@@ -437,10 +434,16 @@ let btnreset = document.getElementById("btnreset1");
 
  }
  btnreset.addEventListener("click",restartGame);
-
+ btnreset1.addEventListener("click",restartGame);
+ btnreset2.addEventListener("click",restartGame);
 
  function victory(){
     getVictory.classList.remove('hidden')
     sectionGame.classList.add('hidden');
 
+ }
+
+ function victory2() {
+     getVictory2.classList.remove('hidden');
+     sectionGame.classList.add('hidden');
  }

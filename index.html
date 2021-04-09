@@ -36,11 +36,10 @@
         </section>
         
         <section id="jogo">
-            <button id="start" class=" hidden" type="submit">start</button>
             <div id="jogadores">
                 <div id="player1">
                     <audio id="audiocat1" src="miado1.wav"></audio>
-                    <div id="gatinho1"> 
+                    <div id="gatinho1" class="borderGatinho1"> 
                     </div>
                     <p id="jogador1">
                         Player 1
@@ -63,17 +62,19 @@
             <div id="even" class="hidden"></div>
         </section>
     </main>
+
     <div id="victory1" class="hidden">
         <p>Player 1 ganhou!! <br> Jogar novamente?</p>
         <img src="img/vitoria.png" alt="vitoria">
-        <input id="btnreset1" type="button" value="reset">
+        <input id="btnreset1" class="btn" type="button" value="reset">
     </div>
 
     <div id="victory2" class="hidden">
         <p>Player 2 ganhou!! <br> Jogar novamente?</p>
         <img src="img/vitoria2.png" alt="vitoria2">
-        <input id="btnreset2" type="button" value="reset">
+        <input id="btnreset2" class="btn" type="button" value="reset">
     </div>
+
     <div id = "drawn" class="drawn hidden" >
         <audio id="audiocat3" src="miado3.wav"></audio>
         <div class="catdrawn">
@@ -82,7 +83,7 @@
         </div>
         
         <div id="bongcat"></div>
-        <input id="btnreset" type="button" value="Resetar">
+        <input id="btnreset" class="btn" type="button" value="Resetar">
     </div>
     <script src="script.js"></script>
 </body>
