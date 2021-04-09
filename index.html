@@ -14,7 +14,7 @@
         <h1>Lig4 05_S5</h1>
         <img src="logo.jpg">
     </header>
-        
+        <audio id="cachorres" src="musica_de_batalha_do_naruto_em_cachorres.mp3" loop="true" ></audio>
     <main id = "teste">
         <section id="instruct">
             <h2>Lig4 CATS</h2>
@@ -39,6 +39,7 @@
             <button id="start" class=" hidden" type="submit">start</button>
             <div id="jogadores">
                 <div id="player1">
+                    <audio id="audiocat1" src="miado1.wav"></audio>
                     <div id="gatinho1"> 
                     </div>
                     <p id="jogador1">
@@ -49,7 +50,7 @@
                 <div id="vs">
                     <img src="img/vs.png" alt="vs" width="60px">
                 </div>
-
+                <audio id="audiocat2" src="miado2.wav"></audio>
                 <div id="player2">
                     <div id="gatinho2"></div>
                     <p id="jogador2">
@@ -57,7 +58,7 @@
                     </p>
                 </div>
             </div>
-            <!-- colocar hidden no board depois -->
+         
             <div id="board"></div>
             <div id="even" class="hidden"></div>
         </section>
@@ -66,9 +67,15 @@
         <p>Teste laslasla</p>
         <input id="btnreset" type="button" value="reset">
     </div>
-    <div id="drawn" class="hidden">
-        <p>Teste laslasla</p>
-        <input id="btnreset" type="button" value="reset">
+    <div id = "drawn" class="drawn hidden" >
+        <audio id="audiocat3" src="miado3.wav"></audio>
+        <div class="catdrawn">
+            <h2 id="empate">Meow! Voces empataram!</h2>
+        <p id="textempate">Que tal continuarem no x1?</p>
+        </div>
+        
+        <div id="bongcat"></div>
+        <input id="btnreset" type="button" value="Resetar">
     </div>
     <script src="script.js"></script>
 </body>

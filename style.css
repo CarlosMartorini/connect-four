@@ -4,6 +4,11 @@
     --corApoio: rgba(14, 14, 14, 0.5);
 }
 
+@keyframes mybutton {
+    from {background-color: #b983c9;}
+    to {background-color: #85f0c9;}
+  }
+
 body {
     font-family: var(--fontFam);
     color: var(--corFont);
@@ -217,11 +222,44 @@ main {
 }
 
 
-#drawn{
-    background-color: red;
+.drawn{
+    align-items: center;
+    
+    background-image: url('img/cattv.jpg');
+    background-size: cover;
     position: absolute;
     width: 100vw;
     height: 100vh;
+    font-size: 30px;
+}
+
+
+#empate{
+    background-color: white;
+    width: 100px;
+    font-size: 30px;
+    border-radius: 5px;
+    padding: 10px;
+    
+}
+
+#textempate{
+    width: 100px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#btnreset{
+    width: 30vw;
+    height: 40px;
+    background-color: white;
+    font-size: 30px;
+    padding-bottom: 5px;
+    font-family:neon ;
+    animation: mybutton 5s infinite;
+    border-radius: 5px;
+
 }
 /* TELAS */
 
@@ -269,6 +307,33 @@ main {
 
     .ballRed {
         width: 40px;
+    }
+
+    #bongcat{
+        width: 50vw;
+        height: 50vh;
+       
+    
+    }
+
+    .drawn{
+        background-image: url('img/catgameover.gif');
+        background-size: cover;
+
+    }
+    #empate{
+        width: 182px;
+    }
+    #textempate{
+        width: 273px;
+    }
+    #btnreset{
+        width: 10vw;
+        height: 40px;
+        background-color: white;
+        
+        border-radius: 5px;
+    
     }
 }
 

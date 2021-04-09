@@ -141,10 +141,8 @@ function verticalVictory(child, evCurrTarg, i, arrBi){
  *  CONDIÇÃO DE VITÓRIA HORIZONTAL *
  ***********************************/
 
- let getVictory = document.getElementById('victory');
 
- const black = "B";
- const red = "R";
+
 
  const horizontal = (letter) => {
     for (let i = 0; i < arrBi.length; i++) {
@@ -313,17 +311,38 @@ function redblackCount(actualColumn){
     }
     
 }
+let audioCat1 = document.getElementById("audiocat1");
+let audioCat2 = document.getElementById("audiocat2");
+let audioCat3 = document.getElementById("audiocat3");
+let musicCachorres = document.getElementById("cachorres");
+
+
+function music(){
+    musicCachorres.currentTime = 0.8;
+    musicCachorres.volume = 0.2;
+    musicCachorres.play();
+    
+}
+music();
+
+
 
 function redBlack(child,evCurrTarg,i){
-
+    
     if(child[0].classList.value === "ballBlack"){
         arrBi[Number(evCurrTarg.id)][i] = "B";
         verticalVictory(child, evCurrTarg, i, arrBi)
+        audioCat1.play();
+        
+        
         // horizonVictory(child, evCurrTarg, i, arrBi)
     
     } else {
         arrBi[Number(evCurrTarg.id)][i] = "R"
         verticalVictory(child, evCurrTarg, i, arrBi)
+        audioCat2.play();
+       
+
         // horizonVictory(child, evCurrTarg, i, arrBi)
     }
 }
@@ -354,6 +373,8 @@ function drawn(){
     if(countCol === 7) {
         removeClick();
         drawnMensage.classList.remove('hidden');
+        sectionGame.classList.add('hidden');
+        audioCat3.play();
         return true
         
     }
@@ -363,10 +384,10 @@ function drawn(){
  *  CONDIÇÃO DE VITÓRIA DIAGONAL *
  *********************************/
 
-//  let getVictory = document.getElementById('victory');
 
-//  const black = "B";
-//  const red = "R";
+
+ const black = "B";
+ const red = "R";
 
  const winDiagonalCondition = () => {
      diagonalUpRight();
