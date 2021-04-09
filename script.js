@@ -141,8 +141,8 @@ function verticalVictory(child, evCurrTarg, i, arrBi){
  *  CONDIÇÃO DE VITÓRIA HORIZONTAL *
  ***********************************/
 
- const black = "B";
- const red = "R";
+
+
 
  const horizontal = (letter) => {
     for (let i = 0; i < arrBi.length; i++) {
@@ -181,102 +181,6 @@ function verticalVictory(child, evCurrTarg, i, arrBi){
 
 }
 
-// function horizonVictory(child, evCurrTarg, i, arrBi){
-//     let primeiroindex = Number(evCurrTarg.id);
-//     // if(arrBi[primeiroindex - 1][i] === arrBi[Number(evCurrTarg.id)][i] && 
-//     // arrBi[primeiroindex - 2][i] === arrBi[Number(evCurrTarg.id)][i] &&
-//     // arrBi[primeiroindex - 3][i] === arrBi[Number(evCurrTarg.id)][i] 
-//     // ){
-//     //     console.log("gain")
-//     // }
-//     if (primeiroindex === 0){
-//         if(arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex+2][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex+3][i])
-//         {
-//             removeClick();
-//         }
-//     }if (primeiroindex === 1){
-//         if((arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex+2][i])
-//         ||
-//         (arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex+2][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex+3][i])
-//         ){
-//             removeClick();
-//         }
-//     }if (primeiroindex === 2){
-//         if((arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex-2][i]) 
-//         ||
-//         (arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex+2][i])
-//         ||
-//         (arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex+2][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex+3][i])
-//         ){
-//             removeClick();
-//         }
-//     }if (primeiroindex === 3){
-//         if((arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex-2][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex-3][i]) 
-//         ||
-//         (arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex-2][i]) 
-//         ||
-//         (arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex+2][i]) 
-//         ||
-//         (arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex+2][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex+3][i])
-//         ){
-//             removeClick();
-//         }
-//     }if (primeiroindex === 4){
-//         if((arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex-2][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i]) 
-//         ||
-//         (arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex+2][i])
-//         ||
-//         (arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex-2][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex-3][i])
-//         ){
-//             removeClick();
-//         }
-//     }if (primeiroindex === 5){
-//         if((arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex-2][i]) 
-//         ||
-//         (arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex-2][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex-3][i])
-//         ){
-//             removeClick();
-//         }
-//     }if (primeiroindex === 6){
-//         if(arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex-2][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex-3][i])
-//         {
-//             removeClick();
-//         }
-//     }
-// }
-
 // percorrer todas as colunas so que na mesma posicao do elemento
 let actualBall;
 
@@ -311,17 +215,38 @@ function redblackCount(actualColumn){
     }
     
 }
+let audioCat1 = document.getElementById("audiocat1");
+let audioCat2 = document.getElementById("audiocat2");
+let audioCat3 = document.getElementById("audiocat3");
+let musicCachorres = document.getElementById("cachorres");
+
+
+function music(){
+    musicCachorres.currentTime = 0.8;
+    musicCachorres.volume = 0.2;
+    musicCachorres.play();
+    
+}
+music();
+
+
 
 function redBlack(child,evCurrTarg,i){
-
+    
     if(child[0].classList.value === "ballBlack"){
         arrBi[Number(evCurrTarg.id)][i] = "B";
         verticalVictory(child, evCurrTarg, i, arrBi)
+        audioCat1.play();
+        
+        
         // horizonVictory(child, evCurrTarg, i, arrBi)
     
     } else {
         arrBi[Number(evCurrTarg.id)][i] = "R"
         verticalVictory(child, evCurrTarg, i, arrBi)
+        audioCat2.play();
+       
+
         // horizonVictory(child, evCurrTarg, i, arrBi)
     }
 }
@@ -352,6 +277,8 @@ function drawn(){
     if(countCol === 7) {
         removeClick();
         drawnMensage.classList.remove('hidden');
+        sectionGame.classList.add('hidden');
+        audioCat3.play();
         return true
         
     }
@@ -361,10 +288,10 @@ function drawn(){
  *  CONDIÇÃO DE VITÓRIA DIAGONAL *
  *********************************/
 
-//  let getVictory = document.getElementById('victory');
 
-//  const black = "B";
-//  const red = "R";
+
+ const black = "B";
+ const red = "R";
 
  const winDiagonalCondition = () => {
      diagonalUpRight();
