@@ -122,7 +122,7 @@ const addClick = () => {
 
 addClick();
 
-let getVictory = document.getElementById('victory');
+let getVictory = document.getElementById('victory1');
 let sectionGame = document.getElementById('teste');
 let drawnMensage = document.getElementById('drawn');
 
@@ -140,8 +140,6 @@ function verticalVictory(child, evCurrTarg, i, arrBi){
 /***********************************
  *  CONDIÇÃO DE VITÓRIA HORIZONTAL *
  ***********************************/
-
- let getVictory = document.getElementById('victory');
 
  const black = "B";
  const red = "R";
@@ -474,7 +472,7 @@ let gatinho2 = document.getElementById('gatinho2')
   *****************/
 
 
-let btnreset = document.getElementById("btnreset");
+let btnreset = document.getElementById("btnreset1");
 
 
  const restartGame = () => {
