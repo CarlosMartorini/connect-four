@@ -240,16 +240,23 @@ main {
 
 .btn {
     width: 30vw;
-    height: 40px;
+    height: 60px;
+    color: rgb(255, 151, 246);
+    text-shadow: 0px 0px 10px #e402d9;
     background-color: white;
     font-size: 30px;
-    padding-bottom: 5px;
     font-family:neon ;
     animation: mybutton 5s infinite;
     border-radius: 5px;
+    border-color: rgb(44, 161, 60) ;
+    box-shadow: 5px 4px 30px rgb(44, 161, 60);
     position: absolute;
-    top: 90%;
+    top: 80%;
     left: 35%;
+}
+
+#btnreset2 {
+    top: 80%;
 }
 
 /* VITORIA PLAYER 2 */
@@ -260,68 +267,64 @@ main {
     background-repeat: no-repeat;
     position: absolute;
     width: 100vw;
-    height: auto;
+    height: 100vh;
+    color: rgb(225, 0, 255);
+    font-size: 35px;
 }
 
 #victory2 p {
     margin: 0;
     text-align: center;
-    color: rgb(225, 0, 255);
-    font-size: 35px;
     background-color: rgba(7, 7, 7, 0.8);
     text-shadow: 5px 5px 20px rgb(153, 24, 170);
 }
 
 #victory2 img {
     width: 300PX;
-    margin-left: 10px;
+    
 }
 
-.drawn{
-    align-items: center;
-    
-    background-image: url('img/cattv.jpg');
+.drawn {
+    background-image: url(https://media.giphy.com/media/G3773sSDJHHy0/giphy.gif);
     background-size: cover;
+    background-repeat: no-repeat;
     position: absolute;
     width: 100vw;
     height: 100vh;
-    font-size: 30px;
-}
-
-
-#empate{
-    background-color: white;
-    width: 100px;
-    font-size: 30px;
-    border-radius: 5px;
-    padding: 10px;
-    
+    color: rgb(225, 0, 255);
+    font-size: 35px;
 }
 
 #textempate{
-    width: 100px;
-    background-color: white;
-    border-radius: 5px;
-    padding: 10px;
+    margin: 0;
+    text-align: center;
+    background-color: rgba(7, 7, 7, 0.8);
+    text-shadow: 5px 5px 20px rgb(153, 24, 170);
 }
 
-#btnreset{
-    width: 30vw;
-    height: 40px;
-    background-color: white;
-    font-size: 30px;
-    padding-bottom: 5px;
-    font-family:neon ;
-    animation: mybutton 5s infinite;
-    border-radius: 5px;
-
+.drawn img {
+    width: 200px;
+    margin-top: 30px;
 }
+
 /* TELAS */
 
 @media only screen and (min-width: 768px) {
     #victory1 img {
         position: absolute;
         left: 30%;
+    }
+
+    #victory2 img {
+        position: absolute;
+        left: 30%;
+    }
+
+    .drawn img {
+        width: 400px;
+        position: absolute;
+        top: 10%;
+        left: 25%;
     }
 
     .btn {
@@ -380,23 +383,18 @@ main {
         width: 40px;
     }
 
-    #bongcat{
-        width: 50vw;
-        height: 50vh;
+    .drawn {
        
-    
     }
 
-    .drawn{
-        background-image: url('img/catgameover.gif');
-        background-size: cover;
+    .drawn img {
+        width: 500px;
+        position: absolute;
+        left: 30%;
+    }
 
-    }
-    #empate{
-        width: 182px;
-    }
     #textempate{
-        width: 273px;
+       
     }
 
     #victory1 {
@@ -410,10 +408,22 @@ main {
         width: 400px;
     }
 
+    #victory2 {
+        height: 100vh;
+    }
+
+    #victory2 img {
+        position: absolute;
+        top: 20%;
+        left: 35%;
+        width: 400px;
+        border-radius: 100%;
+    }
+
     .btn {
         width: 100px;
         top: 85%;
-        left: 48%;
+        left: 45%;
     }
 
     #victory2 {

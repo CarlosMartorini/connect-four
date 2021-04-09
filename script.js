@@ -410,7 +410,7 @@ let btnreset2 =document.getElementById("btnreset2");
         [0,0,0,0,0,0],
         [0,0,0,0,0,0]
     ];
-
+    getVictory2.classList.add('hidden');
     getVictory.classList.add('hidden');
     drawnMensage.classList.add('hidden');
     sectionGame.classList.remove('hidden');
