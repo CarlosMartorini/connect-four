@@ -122,7 +122,7 @@ const addClick = () => {
 
 addClick();
 
-let getVictory = document.getElementById('victory');
+let getVictory = document.getElementById('victory1');
 let sectionGame = document.getElementById('teste');
 let drawnMensage = document.getElementById('drawn');
 
@@ -180,102 +180,6 @@ function verticalVictory(child, evCurrTarg, i, arrBi){
     }
 
 }
-
-// function horizonVictory(child, evCurrTarg, i, arrBi){
-//     let primeiroindex = Number(evCurrTarg.id);
-//     // if(arrBi[primeiroindex - 1][i] === arrBi[Number(evCurrTarg.id)][i] && 
-//     // arrBi[primeiroindex - 2][i] === arrBi[Number(evCurrTarg.id)][i] &&
-//     // arrBi[primeiroindex - 3][i] === arrBi[Number(evCurrTarg.id)][i] 
-//     // ){
-//     //     console.log("gain")
-//     // }
-//     if (primeiroindex === 0){
-//         if(arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex+2][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex+3][i])
-//         {
-//             removeClick();
-//         }
-//     }if (primeiroindex === 1){
-//         if((arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex+2][i])
-//         ||
-//         (arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex+2][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex+3][i])
-//         ){
-//             removeClick();
-//         }
-//     }if (primeiroindex === 2){
-//         if((arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex-2][i]) 
-//         ||
-//         (arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex+2][i])
-//         ||
-//         (arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex+2][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex+3][i])
-//         ){
-//             removeClick();
-//         }
-//     }if (primeiroindex === 3){
-//         if((arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex-2][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex-3][i]) 
-//         ||
-//         (arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex-2][i]) 
-//         ||
-//         (arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex+2][i]) 
-//         ||
-//         (arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex+2][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex+3][i])
-//         ){
-//             removeClick();
-//         }
-//     }if (primeiroindex === 4){
-//         if((arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex-2][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i]) 
-//         ||
-//         (arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex+2][i])
-//         ||
-//         (arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex-2][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex-3][i])
-//         ){
-//             removeClick();
-//         }
-//     }if (primeiroindex === 5){
-//         if((arrBi[primeiroindex][i] === arrBi[primeiroindex+1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex-2][i]) 
-//         ||
-//         (arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex-2][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex-3][i])
-//         ){
-//             removeClick();
-//         }
-//     }if (primeiroindex === 6){
-//         if(arrBi[primeiroindex][i] === arrBi[primeiroindex-1][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex-2][i] &&
-//         arrBi[primeiroindex][i] === arrBi[primeiroindex-3][i])
-//         {
-//             removeClick();
-//         }
-//     }
-// }
 
 // percorrer todas as colunas so que na mesma posicao do elemento
 let actualBall;
@@ -495,7 +399,7 @@ let gatinho2 = document.getElementById('gatinho2')
   *****************/
 
 
-let btnreset = document.getElementById("btnreset");
+let btnreset = document.getElementById("btnreset1");
 
 
  const restartGame = () => {
