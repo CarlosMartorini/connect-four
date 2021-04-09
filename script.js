@@ -219,7 +219,7 @@ let audioCat1 = document.getElementById("audiocat1");
 let audioCat2 = document.getElementById("audiocat2");
 let audioCat3 = document.getElementById("audiocat3");
 
-musicCachorres.volume = 0.5;
+
 
 
 
