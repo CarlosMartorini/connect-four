@@ -96,7 +96,7 @@ main {
     display: flex;
     justify-content: space-around;
     margin: 20px;
-    font-family: ;
+  
     font-size: 24px;
 }
 
@@ -169,12 +169,18 @@ main {
 #board {
     display: flex;
     flex-direction: row;
+    
 }
 
 .columns {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+}
+
+.columns:hover{
+    cursor: pointer;
 }
 
 .celulas {
@@ -307,6 +313,29 @@ main {
     margin-top: 30px;
 }
 
+#divmusic{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+}
+
+#btnmusic{
+    background-image: url('img/favicon.ico');
+    width: 50px;
+    height: 50px;
+    background-position: center;
+    background-size: cover;
+    
+    
+}
+
+#btnmusic:hover{
+    cursor: pointer;
+}
+
+
+
 /* TELAS */
 
 @media only screen and (min-width: 768px) {
@@ -332,6 +361,7 @@ main {
         left: 45%;
     }
 }
+
 
 @media only screen and (min-width: 992px) {
 

@@ -64,6 +64,28 @@ let column5 = document.getElementById("4");
 let column6 = document.getElementById("5");
 let column7 = document.getElementById("6");
 
+let music = document.getElementById("cachorres");
+music.volume = 0.15;
+music.currentTime = 0.8;
+let btnmusic = document.getElementById("btnmusic");
+let countermusic = 1;
+
+ function musicCachorres(){
+    if(countermusic % 2 === 0){
+        music.play();
+    } else {
+        music.pause();
+    }
+  countermusic++;
+ }
+ 
+btnmusic.addEventListener("click", musicCachorres);
+
+function beginmusic(){
+    if(counter === 1){
+        music.play();
+    }
+}
 
 function game(ev){
     
@@ -100,11 +122,13 @@ function game(ev){
 
     winDiagonalCondition();
     horizontalCondition();
-
+    beginmusic()
     drawn()
     
    
 }
+
+
 
 /************************
   *  ADD EVENTO DE CLICK *
@@ -450,3 +474,4 @@ let btnreset2 =document.getElementById("btnreset2");
      getVictory2.classList.remove('hidden');
      sectionGame.classList.add('hidden');
  }
+
